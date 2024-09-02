@@ -3,19 +3,16 @@
 
 ## 🚀 Documentation
 
-  -i, --input               Required. Input file path
+  These parameters are available for you 
 
-  -o, --output              Required. Output file path
+  |  Option | Description | Required | Example |
+  |---------|-------------|----------|---------|
+  | -i      | Input file path | Yes | "D:\Input\ACP-FBL5N-15.05.2024.txt" |
+  | -o      | Output file path | Yes | "D:\Output\data.csv" |
+  | -s      | Separator | Yes | "|" |
+  | -r      | Replace Separator | Yes | "," |
+  | -v      | Search String Value | Yes | "RV,ZR" |
 
-  -s, --separator           Required. Separator
-
-  -r, --replaceSeparator    Required. Replace Separator
-
-  -v, --searchStrValue      Required. Search String Value
-
-  --help                    Display this help screen.
-
-  --version                 Display version information.
 
 
 ## 🙏 Acknowledgements
