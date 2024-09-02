@@ -12,6 +12,8 @@
   | -s      | Separator | Yes | "|" |
   | -r      | Replace Separator | Yes | "," |
   | -v      | Search String Value | Yes | "RV,ZR" |
+  | --help  | Help | No | for show list parameter |
+  | --version | Version | No | for show version |
 
 
 
