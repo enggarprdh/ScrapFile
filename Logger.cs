@@ -16,7 +16,7 @@ namespace ScrapFile
         [Obsolete]
         public Logger(string name)
         {
-            //LayoutRenderer.Register<ElapsedTimeLayoutRenderer>("elapsed-time");            
+            LayoutRenderer.Register<ElapsedTimeLayoutRenderer>("elapsed-time");
             _logger = LogManager.GetLogger(name);
         }
 
@@ -81,5 +81,20 @@ namespace ScrapFile
             _logger.Fatal(exception, message);
         }
 
+    }
+
+    [LayoutRenderer("elapsed-time")]
+    public class ElapsedTimeLayoutRenderer : LayoutRenderer
+    {
+        private DateTime? _lastTimeStamp;
+
+        protected override void Append(StringBuilder builder, LogEventInfo logEvent)
+        {
+            var lastTimeStamp = _lastTimeStamp ?? logEvent.TimeStamp;
+            var elapsedTime = logEvent.TimeStamp - lastTimeStamp;
+            var elapsedTimeString = $"{elapsedTime.TotalSeconds:f4}".PadLeft(10);
+            builder.Append($"{elapsedTimeString}");
+            _lastTimeStamp = logEvent.TimeStamp;
+        }
     }
 }
